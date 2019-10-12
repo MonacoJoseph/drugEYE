@@ -7,23 +7,29 @@ const increment = () => {
     return counter++;
 }
 
+const decrement = () =>{
+  return counter--;
+}
+
+
 
 
 
 app.get('/', function (req, res, next) {
-    res.send(200);
-    if(counter >= 10){
-        res.send(400);
-    }   
+    console.log('increment');
+    res.send(`${counter}`)
   })
 
   app.post('/', function (req, res) {
     console.log(increment());
-    if(counter >= 10){
-        res.send(400);
-    }
+    res.send(`${counter}`)
+  })
 
-    res.send('Got a POST request')
+
+
+
+  const server = app.listen(3000, ()=>{
+    const port 
   })
 
   
