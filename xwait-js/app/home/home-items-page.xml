@@ -1,30 +1,14 @@
-<!-- <Page
+<Page
     class="page"
     navigatingTo="onNavigatingTo"  
     xmlns="http://schemas.nativescript.org/tns.xsd">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Home"></Label>
+        <Label class="action-bar-title" text="XWait"></Label>
     </ActionBar>
 
-    <ListView items="{{ items }}" itemTap="onItemTap" class="list-group">
-        <ListView.itemTemplate>
-            <StackLayout orientation="horizontal" class="list-group-item">
-                <Label text="{{ name }}" textWrap="true"></Label>
-            </StackLayout>
-        </ListView.itemTemplate>
-    </ListView>
-</Page> -->
-
-<Page>
-    <ActionBar title="Xwait: Login"></ActionBar>
-    <StackLayout>
-        <TextField hint="Email Address" keyboardType="email"
-            autocorrect="false" autocapitalizationType="none" />
-        <TextField hint="Password" secure="true" />
-
-        <Button text="Sign in" />
-        <Button text="Sign up for Groceries" />
-
+    <StackLayout class="page-content">
+        <Label class="page-placeholder fa" text="Would you like to check in?" textWrap="true"></Label>
+        <Button text="Check In Here" tap="onTap"></Button>
     </StackLayout>
 </Page>
