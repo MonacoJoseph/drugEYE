@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-var counter = 0;
+var counter = 1;
 
 const increment = () => {
     return counter++;
@@ -16,7 +16,7 @@ const decrement = () =>{
 
 
 app.get('/', function (req, res, next) {
-    console.log('increment');
+    console.log(increment());
     res.send(`${counter}`)
   })
 
