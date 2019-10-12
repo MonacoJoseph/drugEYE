@@ -25,6 +25,11 @@ app.get('/', function (req, res, next) {
     res.send(`${counter}`)
   })
 
+app.get('/checkOut',function(req,res){
+  console.log(decrement());
+  res.send(`${counter}`)
+})
+
 
 
 
