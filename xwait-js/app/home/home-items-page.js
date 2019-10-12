@@ -1,5 +1,9 @@
 const HomeItemsViewModel = require("./home-items-view-model");
 
+let day = 0;
+let month = 0;
+let year = 0;
+
 function onNavigatingTo(args) {
     const component = args.object;
     component.bindingContext = new HomeItemsViewModel();
@@ -22,5 +26,26 @@ function onItemTap(args) {
     });
 }
 
+function onDatePickerLoaded(args) {
+    const datePicker = args.object;
+    datePicker.minDate = new Date("2019", "10", "12");
+    datePicker.on("dateChange", (args) => {
+        console.dir(args);
+    });
+    datePicker.on("dayChange", (args) => {
+        console.dir(args.value);
+        day = args.value;
+    });
+    datePicker.on("monthChange", (args) => {
+        console.dir(args.value);
+        month = args.value;
+    });
+    datePicker.on("yearChange", (args) => {
+        console.dir(args.value);
+        year = args.year
+    });
+}
+
 exports.onItemTap = onItemTap;
 exports.onNavigatingTo = onNavigatingTo;
+exports.onDatePickerLoaded = onDatePickerLoaded;

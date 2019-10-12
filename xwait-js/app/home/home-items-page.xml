@@ -4,14 +4,28 @@
     xmlns="http://schemas.nativescript.org/tns.xsd">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Home"></Label>
+        <Label class="action-bar-title" text="Schedule An Appt"></Label>
     </ActionBar>
+    
+    <StackLayout class="form">
+    <StackLayout class="input-field">
+        <TextField class="input"></TextField>
+    </StackLayout>
 
-    <ListView items="{{ items }}" itemTap="onItemTap" class="list-group">
+    <StackLayout class="input-field">
+        <TextField class="input"></TextField>
+    </StackLayout>
+
+    <Button text="Reserve an Appt" class="btn btn-primary"></Button>
+    <DatePicker year="2019" month="10" day="12" loaded="onDatePickerLoaded" date="{{ date }}" minDate="{{ minDate }}" maxDate="{{ maxDate }}"></DatePicker>
+    </StackLayout>
+
+    <!--<ListView items="{{ items }}" itemTap="onItemTap" class="list-group">
         <ListView.itemTemplate>
             <StackLayout orientation="horizontal" class="list-group-item">
                 <Label text="{{ name }}" textWrap="true"></Label>
             </StackLayout>
         </ListView.itemTemplate>
-    </ListView>
+    </ListView>-->
+
 </Page>
